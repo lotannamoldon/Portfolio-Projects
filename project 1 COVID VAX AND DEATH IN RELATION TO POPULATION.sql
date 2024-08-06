@@ -1,7 +1,10 @@
 Select *
-from portpro..['coviddeath$']
-where continent is not null
-order by 3,4
+from 
+ portpro..['coviddeath$']
+where 
+ continent is not null
+order by 
+ 3,4
 
 --Select *
 --from portpro..['covidvax$']
@@ -14,10 +17,18 @@ order by 1,2
 
 --Looking at total cases vs population
 
-select location,date,total_cases,new_cases,population, (NULLIF(total_cases, 0)/population)*100 AS death_percentage
-from portpro..['coviddeath$']
-where location like '%nigeria%'
-order by 1,2
+select
+ location,
+ date,
+ total_cases,
+ new_cases,
+ population, (NULLIF(total_cases, 0)/population)*100 AS death_percentage
+FROM
+ portpro..['coviddeath$']
+WHERE 
+ location like '%nigeria%'
+ORDER BY
+ 1,2
 
 --counting highest infection rate with respect to population
  
